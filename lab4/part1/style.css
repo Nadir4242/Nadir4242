@@ -21,4 +21,10 @@ body {
   .story {
     font-size: 1.2em;
   }
+
+
+  .story{
+    font-size: 1.2 rem;
+    visibility: visible;
+  }
   

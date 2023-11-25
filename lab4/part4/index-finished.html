@@ -1,0 +1,56 @@
+<!-- Name: Nadir Mahmood
+File: index.html
+Date: 24.11.2023
+Bouncing Balls enhanced
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Bouncing Balls</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <h1>Bouncing Balls</h1>
+    <canvas id="myCanvas"></canvas>
+    <p>Ball count: <span id="ballCount">0</span></p>
+
+    <script>
+      // Set up canvas dimensions
+      const canvas = document.getElementById('myCanvas');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+    </script>
+
+    <script src="main-finished.js"></script>
+
+    <script>
+      // Script for defining the random function
+      function random(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // Script for creating balls
+      const balls = [];
+
+      while (balls.length < 25) {
+        const size = random(10, 20);
+        const ball = new Ball(
+          random(0 + size, width - size),
+          random(0 + size, height - size),
+          random(-7, 7),
+          random(-7, 7),
+          randomRGB(),
+          size
+        );
+
+        balls.push(ball);
+      }
+    </script>
+  </body>
+</html>
