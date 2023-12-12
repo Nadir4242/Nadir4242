@@ -1,0 +1,117 @@
+
+<!--
+
+         Name: Nadir Mahmood
+
+         File: index.html
+
+         Date: 11 December 2023
+
+         The assignment covers various aspects, including color contrast, semantic HTML structure, image accessibility, audio player enhancements, form accessibility, keyboard accessibility, table accessibility, and additional considerations for improving the overall accessibility of the website.
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Accessibility Assessment</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to our wildlife website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+
+        <form class="search">
+            <label for="searchQuery" class="sr-only">Search query</label>
+            <input type="search" name="q" id="searchQuery" placeholder="Search query">
+            <input type="submit" value="Go!">
+        </form>
+    </nav>
+
+    <main>
+        <article>
+            <h2>The Trouble with Bears</h2>
+            <p>By Evan Wild</p>
+            <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food...</p>
+
+            <h3>Types of Bears</h3>
+            <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species...</p>
+
+            <!-- More content... -->
+
+            <section class="comments">
+                <button class="show-hide" tabindex="0" aria-pressed="false">Show comments</button>
+
+                <div class="comment-wrapper" aria-hidden="true">
+                    <h2>Add Comment</h2>
+
+                    <form class="comment-form">
+                        <div class="flex-pair">
+                            <label for="name">Your name:</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="flex-pair">
+                            <label for="comment">Your comment:</label>
+                            <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit comment">
+                        </div>
+                    </form>
+
+                    <h2>Comments</h2>
+
+                    <ul class="comment-container">
+                        <li>
+                            <p>Bob Fossil</p>
+                            <p>Oh I am so glad you taught me all about the big brown angry guys in the woods...</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+
+        <div class="secondary">
+            <h2>Related</h2>
+
+            <ul>
+                <li><a href="#">The Trouble with Bees</a></li>
+                <li><a href="#">The Trouble with Otters</a></li>
+                <li><a href="#">The Trouble with Penguins</a></li>
+                <li><a href="#">The Trouble with Octopi</a></li>
+                <li><a href="#">The Trouble with Lemurs</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>© Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
